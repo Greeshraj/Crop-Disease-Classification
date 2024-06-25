@@ -8,6 +8,7 @@ import tensorflow as tf
 import os
 
 app = FastAPI()
+print("welcome ")
 
 # Allow CORS for all origins during development
 app.add_middleware(
