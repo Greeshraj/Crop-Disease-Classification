@@ -25,7 +25,8 @@ function Predict() {
       const formData = new FormData();
       formData.append('file', selectedFile);
 
-      const response = await fetch('http://localhost:8000/predict', {
+      // const response = await fetch('http://localhost:8000/predict', {
+      const response = await fetch('https://crop-disease-classification.onrender.com/predict',{
         method: 'POST',
         body: formData,
       });
@@ -64,7 +65,7 @@ function Predict() {
         <div className="prediction-result">
           <h2>Prediction Result:</h2>
           <p className="result-text">
-            Based on our analysis, the image depicts a {predictionResult.class.toLowerCase()} leaf condition
+            Based on our analysis, the image depicts a <b>{predictionResult.class.toLowerCase()}</b> leaf condition
             with {Math.round(predictionResult.confidence * 100)}% confidence. This assessment utilizes advanced
             image processing techniques and machine learning algorithms to provide accurate predictions.
           </p>
